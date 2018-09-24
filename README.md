@@ -3,7 +3,7 @@
 Building custom instructions for NIOS II.
 Building circuit using verilog HDL language.
 
-Problema #1 - Microarchitecture.
+Problem #1 - Microarchitecture.
 
 Resources:
 FPGA
