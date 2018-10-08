@@ -81,17 +81,45 @@
 #include "sys/alt_stdio.h"
 #include "system.h"
 #include "io.h"
+#include "stdio.h"
+
+void delay(int a){
+	volatile int i = 0;
+	while(i<a*10000){
+		i++;
+	}
+}
 
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
 
-  unsigned char entrada;
+  unsigned int entrada;
 
   /* Event loop never exits. */
   while (1){
 	  entrada = IORD(PIN_ENTRADA_BASE, 0);
-	  IOWR(PIN_SAIDA_BASE,0,entrada);
+	  //IOWR(PIN_SAIDA_BASE,0,entrada);
+	  if(entrada==14){ //botão 1 pressionado
+		  IOWR(PIN_SAIDA_BASE,0,14);
+	  }else if(entrada == 13){ //botão 2 pressionado
+		  IOWR(PIN_SAIDA_BASE,0,13);
+	  }else if(entrada==11){ //botão 3 pressionado
+		  IOWR(PIN_SAIDA_BASE,0,11);
+	  }else if(entrada==7){ //botão 4 pressionado
+		  IOWR(PIN_SAIDA_BASE,0,7);
+	  }else{ //nenhum botão precionado 1 pressionado
+		  IOWR(PIN_SAIDA_BASE,0,0);
+		  delay(40);
+		  IOWR(PIN_SAIDA_BASE,0,7);
+		  delay(40);
+		  IOWR(PIN_SAIDA_BASE,0,11);
+		  delay(40);
+		  IOWR(PIN_SAIDA_BASE,0,13);
+		  delay(40);
+		  IOWR(PIN_SAIDA_BASE,0,14);
+		  delay(40);
+	  }
   }
 
   return 0;

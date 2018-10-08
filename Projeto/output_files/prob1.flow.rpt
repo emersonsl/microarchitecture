@@ -1,5 +1,5 @@
 Flow report for prob1
-Mon Oct 08 00:51:54 2018
+Mon Oct 08 10:44:50 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Oct 08 00:51:47 2018       ;
+; Flow Status                        ; Successful - Mon Oct 08 10:44:42 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; prob1                                       ;
 ; Top-level Entity Name              ; processor                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,561 / 6,272 ( 25 % )                      ;
+; Total logic elements               ; 1,560 / 6,272 ( 25 % )                      ;
 ;     Total combinational functions  ; 1,447 / 6,272 ( 23 % )                      ;
-;     Dedicated logic registers      ; 885 / 6,272 ( 14 % )                        ;
-; Total registers                    ; 885                                         ;
-; Total pins                         ; 7 / 92 ( 8 % )                              ;
+;     Dedicated logic registers      ; 889 / 6,272 ( 14 % )                        ;
+; Total registers                    ; 889                                         ;
+; Total pins                         ; 9 / 92 ( 10 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 142,336 / 276,480 ( 51 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/08/2018 00:50:17 ;
+; Start date & time ; 10/08/2018 10:43:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; prob1               ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88750185370164.153897061707400         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 88750185370164.153900618907000         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -94,11 +94,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:06     ; 1.0                     ; 4904 MB             ; 00:01:43                           ;
-; Fitter               ; 00:00:15     ; 1.1                     ; 5277 MB             ; 00:00:15                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4694 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4764 MB             ; 00:00:05                           ;
-; Total                ; 00:01:28     ; --                      ; --                  ; 00:02:05                           ;
+; Analysis & Synthesis ; 00:01:09     ; 1.0                     ; 4911 MB             ; 00:01:50                           ;
+; Fitter               ; 00:00:15     ; 1.1                     ; 5266 MB             ; 00:00:16                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4693 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 4768 MB             ; 00:00:05                           ;
+; Total                ; 00:01:32     ; --                      ; --                  ; 00:02:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

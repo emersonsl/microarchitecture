@@ -151,14 +151,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 80        :        :                   :      
 VCCIO5                       : 81        : power  :                   : 2.5V    : 5         :                
 GND                          : 82        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
+pio_0_external_connection_export[3] : 84        : output : 2.5 V             :         : 5         : Y              
 pio_0_external_connection_export[2] : 85        : output : 2.5 V             :         : 5         : Y              
 pio_0_external_connection_export[1] : 86        : output : 2.5 V             :         : 5         : Y              
 pio_0_external_connection_export[0] : 87        : output : 2.5 V             :         : 5         : Y              
 pio_1_external_connection_export[0] : 88        : input  : 2.5 V             :         : 5         : Y              
 pio_1_external_connection_export[1] : 89        : input  : 2.5 V             :         : 5         : Y              
 pio_1_external_connection_export[2] : 90        : input  : 2.5 V             :         : 6         : Y              
-GND+                         : 91        :        :                   :         : 6         :                
+pio_1_external_connection_export[3] : 91        : input  : 2.5 V             :         : 6         : Y              
 CONF_DONE                    : 92        :        :                   :         : 6         :                
 VCCIO6                       : 93        : power  :                   : 2.5V    : 6         :                
 MSEL0                        : 94        :        :                   :         : 6         :                

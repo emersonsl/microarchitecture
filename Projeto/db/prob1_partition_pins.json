@@ -16,6 +16,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "pio_0_external_connection_export[3]",
+					"strict" : false
+				},
+				{
 					"name" : "clk_clk",
 					"strict" : false
 				},
@@ -29,6 +33,10 @@
 				},
 				{
 					"name" : "pio_1_external_connection_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pio_1_external_connection_export[3]",
 					"strict" : false
 				},
 				{

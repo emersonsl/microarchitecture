@@ -5,8 +5,8 @@
 `timescale 1 ps / 1 ps
 module processor (
 		input  wire       clk_clk,                          //                       clk.clk
-		output wire [2:0] pio_0_external_connection_export, // pio_0_external_connection.export
-		input  wire [2:0] pio_1_external_connection_export  // pio_1_external_connection.export
+		output wire [3:0] pio_0_external_connection_export, // pio_0_external_connection.export
+		input  wire [3:0] pio_1_external_connection_export  // pio_1_external_connection.export
 	);
 
 	wire         nios2_qsys_0_jtag_debug_module_reset_reset;                   // nios2_qsys_0:jtag_debug_module_resetrequest -> [rst_controller:reset_in0, rst_controller:reset_in1]

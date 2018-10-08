@@ -33,15 +33,15 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 152)
 		(input)
-		(text "pio_1_external_connection_export[2..0]" (rect 0 0 154 12)(font "Arial" (font_size 8)))
-		(text "pio_1_external_connection_export[2..0]" (rect 4 141 232 152)(font "Arial" (font_size 8)))
+		(text "pio_1_external_connection_export[3..0]" (rect 0 0 154 12)(font "Arial" (font_size 8)))
+		(text "pio_1_external_connection_export[3..0]" (rect 4 141 232 152)(font "Arial" (font_size 8)))
 		(line (pt 0 152)(pt 208 152)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(output)
-		(text "pio_0_external_connection_export[2..0]" (rect 0 0 155 12)(font "Arial" (font_size 8)))
-		(text "pio_0_external_connection_export[2..0]" (rect 4 101 232 112)(font "Arial" (font_size 8)))
+		(text "pio_0_external_connection_export[3..0]" (rect 0 0 155 12)(font "Arial" (font_size 8)))
+		(text "pio_0_external_connection_export[3..0]" (rect 4 101 232 112)(font "Arial" (font_size 8)))
 		(line (pt 0 112)(pt 208 112)(line_width 3))
 	)
 	(drawing
