@@ -1,0 +1,32 @@
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+
+# Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# File: C:\microarchitecture\prob1.csv
+# Generated on: Mon Oct 08 00:46:25 2018
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
+altera_reserved_tck,Input,,,,PIN_16,,,,,,
+altera_reserved_tdi,Input,,,,PIN_15,,,,,,
+altera_reserved_tdo,Output,,,,PIN_20,,,,,,
+altera_reserved_tms,Input,,,,PIN_18,,,,,,
+clk_clk,Input,PIN_23,1,B1_N0,PIN_23,,,,,,
+pio_0_external_connection_export[2],Output,PIN_85,5,B5_N0,PIN_52,,,,,,
+pio_0_external_connection_export[1],Output,PIN_86,5,B5_N0,PIN_87,,,,,,
+pio_0_external_connection_export[0],Output,PIN_87,5,B5_N0,PIN_124,,,,,,
+pio_1_external_connection_export[2],Input,PIN_90,6,B6_N0,PIN_132,,,,,,
+pio_1_external_connection_export[1],Input,PIN_89,5,B5_N0,PIN_25,,,,,,
+pio_1_external_connection_export[0],Input,PIN_88,5,B5_N0,PIN_24,,,,,,
