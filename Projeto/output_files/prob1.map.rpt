@@ -1,5 +1,5 @@
 Analysis & Synthesis report for prob1
-Mon Oct 08 10:44:19 2018
+Mon Oct 08 14:12:41 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -182,7 +182,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 08 10:44:19 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 08 14:12:41 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; prob1                                       ;
 ; Top-level Entity Name              ; processor                                   ;
@@ -3642,7 +3642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 08 10:43:07 2018
+    Info: Processing started: Mon Oct 08 14:11:24 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off prob1 -c prob1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -4041,7 +4041,7 @@ Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "altera
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1" File: C:/Problema1/microarchitecture/Projeto/processador/synthesis/submodules/altera_reset_controller.v Line: 208
 Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" File: C:/Problema1/microarchitecture/Projeto/processador/synthesis/submodules/altera_reset_controller.v Line: 220
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.10.08.10:43:55 Progress: Loading sld345134e2/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.10.08.14:12:18 Progress: Loading sld345134e2/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -4078,10 +4078,10 @@ Info (21057): Implemented 1824 device resources after synthesis - the final reso
     Info (21061): Implemented 1666 logic cells
     Info (21064): Implemented 144 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4911 megabytes
-    Info: Processing ended: Mon Oct 08 10:44:19 2018
-    Info: Elapsed time: 00:01:12
-    Info: Total CPU time (on all processors): 00:01:53
+    Info: Peak virtual memory: 4904 megabytes
+    Info: Processing ended: Mon Oct 08 14:12:41 2018
+    Info: Elapsed time: 00:01:17
+    Info: Total CPU time (on all processors): 00:02:04
 
 
 +------------------------------------------+
