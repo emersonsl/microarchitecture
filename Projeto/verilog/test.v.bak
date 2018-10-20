@@ -1,0 +1,8 @@
+module (
+	entrada,	saida
+);
+
+input entrada;
+output saida;
+
+saida <= entrada;

@@ -4,6 +4,26 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "character_lcd_0_external_interface_ON",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_BLON",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_EN",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_RS",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_RW",
+					"strict" : false
+				},
+				{
 					"name" : "pio_0_external_connection_export[0]",
 					"strict" : false
 				},
@@ -17,6 +37,38 @@
 				},
 				{
 					"name" : "pio_0_external_connection_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "character_lcd_0_external_interface_DATA[7]",
 					"strict" : false
 				},
 				{

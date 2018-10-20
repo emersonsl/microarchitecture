@@ -68,17 +68,17 @@ CHIP  "prob1"  ASSIGNED TO AN: EP4CE6E22C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-RESERVED_INPUT_WITH_WEAK_PULLUP : 1         :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 2         :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 3         :        :                   :         : 1         :                
+character_lcd_0_external_interface_DATA[1] : 1         : bidir  : 2.5 V             :         : 1         : Y              
+character_lcd_0_external_interface_DATA[4] : 2         : bidir  : 2.5 V             :         : 1         : Y              
+character_lcd_0_external_interface_DATA[3] : 3         : bidir  : 2.5 V             :         : 1         : Y              
 GND                          : 4         : gnd    :                   :         :           :                
 VCCINT                       : 5         : power  :                   : 1.2V    :           :                
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 6         : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : 7         :        :                   :         : 1         :                
+character_lcd_0_external_interface_DATA[6] : 7         : bidir  : 2.5 V             :         : 1         : Y              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 8         : input  : 2.5 V             :         : 1         : N              
 nSTATUS                      : 9         :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 10        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 11        :        :                   :         : 1         :                
+character_lcd_0_external_interface_DATA[5] : 10        : bidir  : 2.5 V             :         : 1         : Y              
+character_lcd_0_external_interface_DATA[7] : 11        : bidir  : 2.5 V             :         : 1         : Y              
 ~ALTERA_DCLK~                : 12        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 13        : input  : 2.5 V             :         : 1         : N              
 nCONFIG                      : 14        :        :                   :         : 1         :                
@@ -202,14 +202,14 @@ GND                          : 131       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 132       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 133       :        :                   :         : 8         :                
 VCCINT                       : 134       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 135       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 136       :        :                   :         : 8         :                
+character_lcd_0_external_interface_ON : 135       : output : 2.5 V             :         : 8         : N              
+character_lcd_0_external_interface_BLON : 136       : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 137       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 138       :        :                   :         : 8         :                
+character_lcd_0_external_interface_RW : 138       : output : 2.5 V             :         : 8         : Y              
 VCCIO8                       : 139       : power  :                   : 2.5V    : 8         :                
 GND                          : 140       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 141       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 142       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 143       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 144       :        :                   :         : 8         :                
+character_lcd_0_external_interface_RS : 141       : output : 2.5 V             :         : 8         : Y              
+character_lcd_0_external_interface_DATA[0] : 142       : bidir  : 2.5 V             :         : 8         : Y              
+character_lcd_0_external_interface_EN : 143       : output : 2.5 V             :         : 8         : Y              
+character_lcd_0_external_interface_DATA[2] : 144       : bidir  : 2.5 V             :         : 8         : Y              
 GND                          : EPAD      :        :                   :         :           :                

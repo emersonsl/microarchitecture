@@ -1,0 +1,119 @@
+#include "altera_up_avalon_character_lcd.h"
+#include "system.h"
+#include "sys/alt_stdio.h"
+#include "io.h"
+#include "stdio.h"
+
+
+void delay(int a){
+	volatile int i = 0;
+	while(i<a*10000){
+		i++;
+	}
+}
+
+void escrever(alt_up_character_lcd_dev * char_lcd_dev, char word []){
+	alt_up_character_lcd_set_cursor_pos(char_lcd_dev, 0, 0);
+
+	int j;
+	for(j=0; j<16; j++){
+		alt_up_character_lcd_string(char_lcd_dev, " ");
+	}
+	alt_up_character_lcd_set_cursor_pos(char_lcd_dev, 0, 0);
+
+	alt_up_character_lcd_string(char_lcd_dev, word);
+}
+
+void clear();
+
+int main(void)
+{
+	unsigned int entrada;
+	int i=1;
+	int c=1;
+	alt_up_character_lcd_dev * char_lcd_dev;
+	// open the Character LCD port
+	char_lcd_dev = alt_up_character_lcd_open_dev ("/dev/character_lcd_0");
+	if ( char_lcd_dev == NULL)
+		alt_printf ("Error: could not open character LCD device\n");
+	else
+	alt_printf ("Opened character LCD device\n");
+	/* Initialize the character display */
+	alt_up_character_lcd_init (char_lcd_dev);
+	/* Write "Welcome to" in the first row */
+	//alt_up_character_lcd_string(char_lcd_dev, "Tou com fome");
+	/* Write "the DE2 board" in the second row */
+	//char second_row[] = "Quero Tomada";
+	//alt_up_character_lcd_set_cursor_pos(char_lcd_dev, 0, 1);
+	//alt_up_character_lcd_string(char_lcd_dev, second_row);
+	  /* Event loop never exits. */
+	IOWR(PIN_SAIDA_BASE,0,15);
+	while (1){
+		entrada = IORD(PIN_ENTRADA_BASE, 0);
+		switch(entrada){
+			case 14: //up
+				delay(30);
+				if(c==0){
+					i--;
+					c=1;
+					IOWR(PIN_SAIDA_BASE,0,7);
+				}
+				break;
+			case 13: //down
+				delay(30);
+				if(c==0){
+					i++;
+					c=1;
+					IOWR(PIN_SAIDA_BASE,0,11);
+				}
+				break;
+			case 11: //select
+				delay(30);
+				if(c==0){
+					c=2;
+					IOWR(PIN_SAIDA_BASE,0,13);
+				}
+				break;
+			case 7: //return
+				delay(30);
+				if(c==3){
+					c=1;
+					IOWR(PIN_SAIDA_BASE,0,14);
+				}
+				break;
+		}
+
+
+		if(i==0 && c==1){ //end up
+			i=4;
+		}else if(i==5 && c==1){ //end down
+			i=1;
+		}
+
+		if(i==1){ //op 1
+			if(c==1){ //op
+				escrever(char_lcd_dev, "OP 1");
+				c=0;
+			}else if(c==2){ //msg
+				escrever(char_lcd_dev, "M 1");
+				c=3;
+			}
+		}else if(i==2){
+			if(c==1){
+				alt_up_character_lcd_string(char_lcd_dev, "OP 2");
+				c=0;
+			}
+		}else if(i==3){
+			if(c==1){
+				alt_up_character_lcd_string(char_lcd_dev, "OP 3");
+				c=0;
+			}
+		}else if(i== 4){
+			if(c==1){
+				alt_up_character_lcd_string(char_lcd_dev, "OP 4");
+				c=0;
+			}
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,79 @@
+#include "altera_up_avalon_character_lcd.h"
+#include "system.h"
+#include "sys/alt_stdio.h"
+#include "io.h"
+#include "stdio.h"
+
+
+void delay(int a){
+	volatile int i = 0;
+	while(i<a*10000){
+		i++;
+	}
+}
+
+void clear();
+
+int main(void)
+{
+	unsigned int entrada;
+	int i=1;
+	int s=1;
+	alt_up_character_lcd_dev * char_lcd_dev;
+	// open the Character LCD port
+	char_lcd_dev = alt_up_character_lcd_open_dev ("/dev/character_lcd_0");
+	if ( char_lcd_dev == NULL)
+		alt_printf ("Error: could not open character LCD device\n");
+	else
+	alt_printf ("Opened character LCD device\n");
+	/* Initialize the character display */
+	alt_up_character_lcd_init (char_lcd_dev);
+	/* Write "Welcome to" in the first row */
+	//alt_up_character_lcd_string(char_lcd_dev, "Tou com fome");
+	/* Write "the DE2 board" in the second row */
+	//char second_row[] = "Quero Tomada";
+	//alt_up_character_lcd_set_cursor_pos(char_lcd_dev, 0, 1);
+	//alt_up_character_lcd_string(char_lcd_dev, second_row);
+	  /* Event loop never exits. */
+	IOWR(PIN_SAIDA_BASE,0,15);
+	while (1){
+		entrada = IORD(PIN_ENTRADA_BASE, 0);
+		switch(entrada){
+			case 14:
+				delay(30);
+				if(s==0){
+					i++;
+					s=1;
+					IOWR(PIN_SAIDA_BASE,0,7);
+				}
+			case 13:
+				delay(30);
+				if(s==0){
+					i--;
+					s=1;
+					IOWR(PIN_SAIDA_BASE,0,11);
+				}
+		}
+
+		if(i==0 && s==1){
+			i=4;
+		}else if(i==5 && s==1){
+			i=1;
+		}
+
+		if(i==1 && s==1){
+			alt_up_character_lcd_string(char_lcd_dev, "OP 1");
+			s=0;
+		}else if(i==2 && s==1){
+			alt_up_character_lcd_string(char_lcd_dev, "OP 2");
+			s=0;
+		}else if(i==3 && s==1){
+			alt_up_character_lcd_string(char_lcd_dev, "OP 3");
+			s=0;
+		}else if(i== 4&& s==1){
+			alt_up_character_lcd_string(char_lcd_dev, "OP 4");
+			s=0;
+		}
+	}
+	return 0;
+}

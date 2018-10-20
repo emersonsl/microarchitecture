@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element character_lcd_0
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -34,7 +42,7 @@
       }
       datum baseAddress
       {
-         value = "36896";
+         value = "36928";
          type = "String";
       }
    }
@@ -95,7 +103,7 @@
    {
       datum baseAddress
       {
-         value = "36864";
+         value = "36880";
          type = "String";
       }
    }
@@ -111,7 +119,7 @@
    {
       datum baseAddress
       {
-         value = "36880";
+         value = "36896";
          type = "String";
       }
    }
@@ -144,6 +152,11 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="character_lcd_0_external_interface"
+   internal="character_lcd_0.external_interface"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
    name="pio_0_external_connection"
@@ -155,6 +168,15 @@
    internal="pin_entrada.external_connection"
    type="conduit"
    dir="end" />
+ <module
+   name="character_lcd_0"
+   kind="altera_up_avalon_character_lcd"
+   version="18.0"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="cursor" value="Normal" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -194,7 +216,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="16" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x4000' end='0x7FFE' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8800' end='0x9000' /><slave name='pin_entrada.s1' start='0x9000' end='0x9010' /><slave name='pin_saida.s1' start='0x9010' end='0x9020' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x9020' end='0x9028' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='character_lcd_0.avalon_lcd_slave' start='0x0' end='0x2' /><slave name='onchip_memory2_0.s1' start='0x4000' end='0x7FFE' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8800' end='0x9000' /><slave name='pin_entrada.s1' start='0x9010' end='0x9020' /><slave name='pin_saida.s1' start='0x9020' end='0x9030' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x9040' end='0x9048' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -221,7 +243,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="16" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x4000' end='0x7FFE' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8800' end='0x9000' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='character_lcd_0.avalon_lcd_slave' start='0x0' end='0x2' /><slave name='onchip_memory2_0.s1' start='0x4000' end='0x7FFE' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8800' end='0x9000' /></address-map>]]></parameter>
   <parameter name="internalIrqMaskSystemInfo" value="1" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
@@ -388,7 +410,16 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x9020" />
+  <parameter name="baseAddress" value="0x9040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_qsys_0.data_master"
+   end="character_lcd_0.avalon_lcd_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -415,7 +446,7 @@
    start="nios2_qsys_0.data_master"
    end="pin_saida.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x9010" />
+  <parameter name="baseAddress" value="0x9020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -424,7 +455,16 @@
    start="nios2_qsys_0.data_master"
    end="pin_entrada.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x9000" />
+  <parameter name="baseAddress" value="0x9010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_qsys_0.instruction_master"
+   end="character_lcd_0.avalon_lcd_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -450,6 +490,11 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pin_saida.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pin_entrada.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="character_lcd_0.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -486,6 +531,11 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
+   end="character_lcd_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
    end="onchip_memory2_0.reset1" />
  <connection
    kind="reset"
@@ -517,6 +567,11 @@
    version="18.1"
    start="nios2_qsys_0.jtag_debug_module_reset"
    end="pin_entrada.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="character_lcd_0.reset" />
  <connection
    kind="reset"
    version="18.1"

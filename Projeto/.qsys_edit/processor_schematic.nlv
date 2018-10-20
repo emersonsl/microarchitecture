@@ -2,18 +2,20 @@
 # 
 preplace inst processor.pin_saida -pg 1 -lvl 2 -y 310
 preplace inst processor -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst processor.sysid_qsys_0 -pg 1 -lvl 2 -y 420
+preplace inst processor.sysid_qsys_0 -pg 1 -lvl 2 -y 430
 preplace inst processor.pin_entrada -pg 1 -lvl 2 -y 130
-preplace inst processor.clk_0 -pg 1 -lvl 2 -y 520
+preplace inst processor.clk_0 -pg 1 -lvl 2 -y 530
+preplace inst processor.lcd_16207_0 -pg 1 -lvl 3 -y 590
 preplace inst processor.nios2_qsys_0 -pg 1 -lvl 1 -y 50
 preplace inst processor.onchip_memory2_0 -pg 1 -lvl 2 -y 230
 preplace inst processor.jtag_uart_0 -pg 1 -lvl 2 -y 30
-preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)processor.pio_0_external_connection,(SLAVE)pin_saida.external_connection) 1 0 2 NJ 340 NJ
-preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)clk_0.clk_in,(SLAVE)processor.clk) 1 0 2 NJ 530 NJ
-preplace netloc INTERCONNECT<net_container>processor</net_container>(SLAVE)jtag_uart_0.reset,(SLAVE)pin_saida.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)pin_entrada.reset,(MASTER)nios2_qsys_0.jtag_debug_module_reset,(SLAVE)nios2_qsys_0.reset_n,(MASTER)clk_0.clk_reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)clk_0.clk_in_reset) 1 0 3 240 220 530 590 770
+preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)processor.lcd_16207_0_external,(SLAVE)lcd_16207_0.external) 1 0 3 NJ 640 NJ 640 NJ
+preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)pin_saida.external_connection,(SLAVE)processor.pio_0_external_connection) 1 0 2 NJ 340 NJ
+preplace netloc FAN_OUT<net_container>processor</net_container>(SLAVE)pin_saida.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)lcd_16207_0.clk,(SLAVE)pin_entrada.clk,(SLAVE)onchip_memory2_0.clk1,(MASTER)clk_0.clk,(SLAVE)nios2_qsys_0.clk,(SLAVE)sysid_qsys_0.clk) 1 0 3 220 180 550 520 810
+preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)clk_0.clk_in,(SLAVE)processor.clk) 1 0 2 NJ 540 NJ
 preplace netloc POINT_TO_POINT<net_container>processor</net_container>(SLAVE)jtag_uart_0.irq,(MASTER)nios2_qsys_0.d_irq) 1 1 1 N
-preplace netloc INTERCONNECT<net_container>processor</net_container>(MASTER)nios2_qsys_0.data_master,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)pin_saida.s1,(SLAVE)nios2_qsys_0.jtag_debug_module,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)pin_entrada.s1) 1 0 2 200 240 510
-preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)processor.pio_1_external_connection,(SLAVE)pin_entrada.external_connection) 1 0 2 NJ 200 NJ
-preplace netloc FAN_OUT<net_container>processor</net_container>(SLAVE)pin_entrada.clk,(SLAVE)jtag_uart_0.clk,(MASTER)clk_0.clk,(SLAVE)pin_saida.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)nios2_qsys_0.clk,(SLAVE)onchip_memory2_0.clk1) 1 0 3 220 180 550 510 770
-levelinfo -pg 1 0 170 810
-levelinfo -hier processor 180 270 600 790
+preplace netloc INTERCONNECT<net_container>processor</net_container>(MASTER)nios2_qsys_0.instruction_master,(SLAVE)lcd_16207_0.control_slave,(SLAVE)pin_entrada.s1,(SLAVE)nios2_qsys_0.jtag_debug_module,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)nios2_qsys_0.data_master,(SLAVE)pin_saida.s1,(SLAVE)onchip_memory2_0.s1) 1 0 3 200 240 510 600 790
+preplace netloc INTERCONNECT<net_container>processor</net_container>(SLAVE)sysid_qsys_0.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)jtag_uart_0.reset,(SLAVE)clk_0.clk_in_reset,(SLAVE)nios2_qsys_0.reset_n,(SLAVE)lcd_16207_0.reset,(MASTER)nios2_qsys_0.jtag_debug_module_reset,(SLAVE)pin_saida.reset,(SLAVE)pin_entrada.reset,(MASTER)clk_0.clk_reset) 1 0 3 240 220 530 620 770
+preplace netloc EXPORT<net_container>processor</net_container>(SLAVE)pin_entrada.external_connection,(SLAVE)processor.pio_1_external_connection) 1 0 2 NJ 200 NJ
+levelinfo -pg 1 0 170 970
+levelinfo -hier processor 180 270 600 840 960
